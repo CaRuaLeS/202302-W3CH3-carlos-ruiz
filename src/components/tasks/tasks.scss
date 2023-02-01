@@ -6,8 +6,8 @@
   }
   .card {
     display: flex;
-    flex-direction: column;
-    border: 1px solid gray;
+    flex-direction: row;
+    border: 1px solid rgb(103, 96, 112);
     padding: 1rem;
   }
 }
