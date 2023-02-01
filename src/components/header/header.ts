@@ -5,7 +5,7 @@ import { Component } from '../component/component';
 import './header.scss';
 
 export class Header extends Component {
-  constructor(public selector: string, public title: string = 'Learning DOM') {
+  constructor(public selector: string, public title: string = 'Mascotas') {
     super();
     this.template = this.createTemplate();
     this.render('afterbegin');

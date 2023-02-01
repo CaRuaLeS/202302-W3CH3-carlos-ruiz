@@ -2,11 +2,11 @@
 import { PetStructure } from '../../models/task';
 import { Component } from '../component/component';
 
-export class Tasks extends Component {
+export class Item extends Component {
   constructor(public selector: string, public tasks: PetStructure[]) {
     super();
     this.template = this.createTemplate();
-    this.render('afterbegin');
+    this.render('beforeend');
   }
 
   createTemplate() {
@@ -15,13 +15,14 @@ export class Tasks extends Component {
         (item) => `
         <li class="card">
           <span title="${item.id}">${item.name}</span>
+          <span> ${item.specie}</span>
           <span>${item.owner}</span>
           <button>🗑️</button>
         </li>`
       )
       .join('\n');
     return `
-    <section class="tasks"><ul>${items}</ul></section>
+    ${items}
     `;
   }
 }
