@@ -2,7 +2,7 @@
 import { PetStructure } from '../../models/task';
 import { Component } from '../component/component';
 
-export class Tasks extends Component {
+export class Item extends Component {
   constructor(public selector: string, public tasks: PetStructure[]) {
     super();
     this.template = this.createTemplate();
@@ -21,7 +21,7 @@ export class Tasks extends Component {
       )
       .join('\n');
     return `
-    <section class="tasks"><ul>${items}</ul></section>
+    ${items}
     `;
   }
 }
