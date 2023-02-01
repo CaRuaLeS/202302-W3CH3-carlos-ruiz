@@ -2,6 +2,7 @@
 import { PET } from '../../mocks/tasks';
 import { Pet, PetStructure } from '../../models/task';
 import { Component } from '../component/component';
+import { Item } from '../item/item';
 
 export class Add extends Component {
   constructor(public selector: string) {
@@ -42,26 +43,15 @@ export class Add extends Component {
     const formOwner = document.querySelector('#owner');
 
     const renderPets = (data: PetStructure[]) => {
-      let tasksTemplate = '<li class="card">';
-      data.forEach((item) => {
-        tasksTemplate += `
-          <span title="${item.id}">${item.name}</span>
-          <span>${item.owner}</span>
-          <button>🗑️</button>
-        `;
-      });
-      tasksTemplate += '</li>';
-      root.insertAdjacentHTML('beforeend', tasksTemplate);
+      const newP = new Item('.list', data);
     };
 
     addButton?.addEventListener('click', (e) => {
       e.preventDefault();
-      const newPet = new Pet(
-        formName?.value,
-        formSpecie?.value,
-        formOwner?.value
-      );
-      renderPets(PET);
+      const newPet = [
+        new Pet(formName?.value, formSpecie?.value, formOwner?.value),
+      ];
+      renderPets(newPet);
       console.log(newPet);
     });
   }

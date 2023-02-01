@@ -6,7 +6,7 @@ export class Item extends Component {
   constructor(public selector: string, public tasks: PetStructure[]) {
     super();
     this.template = this.createTemplate();
-    this.render('afterbegin');
+    this.render('beforeend');
   }
 
   createTemplate() {
@@ -15,6 +15,7 @@ export class Item extends Component {
         (item) => `
         <li class="card">
           <span title="${item.id}">${item.name}</span>
+          <span> ${item.specie}</span>
           <span>${item.owner}</span>
           <button>🗑️</button>
         </li>`
