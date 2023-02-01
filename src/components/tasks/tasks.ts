@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { PetStructure } from '../../models/task';
 import { Component } from '../component/component';
+import './tasks.scss';
 
 export class Tasks extends Component {
   constructor(public selector: string, public tasks: PetStructure[]) {
